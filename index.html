@@ -1,6 +1,255 @@
 <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Buku Digital Puisi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:white;
+    background:#0f0f0f;
+    overflow-x:hidden;
+}
+
+/* HUJAN */
+.rain{
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    top:0;
+    left:0;
+    z-index:1;
+}
+
+.drop{
+    position:absolute;
+    width:2px;
+    height:80px;
+    background:rgba(255,255,255,0.2);
+    animation:rain 1s linear infinite;
+}
+
+@keyframes rain{
+
+    animation:rain 1s linear infinite;
+}
+
+@keyframes rain{
+
+from{
+    transform:translateY(-100px);
+}
+
+to{
+    transform:translateY(100vh);
+}
+
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffd369;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.8)
+    ),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+}
+
+.hero-content{
+    z-index:2;
+    animation:fadeUp 2s ease;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:65px;
+    color:#ffd369;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:20px;
+    line-height:2;
+}
+
+/* SECTION */
+.section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.8)
+    ),
+    url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e');
+
+    background-size:cover;
+    background-position:center;
+}
+.card{
+    width:100%;
+    max-width:700px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+    padding:40px;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:0 10px 40px rgba(0,0,0,0.5);
+
+    animation:fadeUp 1.5s ease;
+}
+
+.card h2{
+    font-family:'Playfair Display',serif;
+    color:#ffd369;
+    margin-bottom:10px;
+    font-size:40px;
+}
+
+.date{
+    opacity:0.7;
+    margin-bottom:30px;
+}
+
+.card p{
+    line-height:2.2;
+    font-size:18px;
+}
+
+.category{
+    margin-top:25px;
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.1);
+}
+
+/* FITUR MENULIS */
+.write-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.9)
+    );
+}
+
+.write-box{
+    width:100%;
+    max-width:700px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+    padding:40px;
+}
+
+.write-box h2{
+    color:#ffd369;
+    margin-bottom:20px;
+}
+
+textarea{
+    width:100%;
+    height:250px;
+    border:none;
+    outline:none;
+    border-radius:20px;
+    padding:20px;
+    resize:none;
+
+    background:rgba(255,255,255,0.08);
+    color:white;
+
+    font-size:17px;
+    line-height:2;
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+
+    background:#ffd369;
+
+    font-size:17px;
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-5px);
+}
 /* FOOTER */
 footer{
     text-align:center;
