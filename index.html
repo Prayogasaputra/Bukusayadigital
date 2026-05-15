@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:black;
+    opacity:0.7;
+}
+
+/* ANIMASI */
+@keyframes fadeUp{
+
+from{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+/* RESPONSIVE HP */
+@media(max-width:768px){
+
+.hero h1{
+    font-size:45px;
+}
+
+.card h2{
+    font-size:30px;
+}
+
+.card p{
+    font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HUJAN -->
+<div class="rain"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#puisi">Puisi</a>
+    <a href="#tulis">Menulis</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Buku Digital</h1>
+
+<p>
+Tempat kata-kata yang tak sempat diucapkan,<br>
+namun tetap ingin dikenang.
+</p>
+
+</div>
+
+</section>
+
+<!-- PUISI -->
+<section class="section" id="puisi">
+
+<div class="card">
+
+<h2>Malam</h2>
+
+<div class="date">
+15 Mei 2026
+</div>
+
+<p>
+Malam yang indah hanya milik angin<br>
+yang selalu menyampaikan rindu<br>
+atas kehangatan yang sudah hilang.
+</p>
+
+<div class="category">
+Kategori : Rindu
+</div>
+
+</div>
+
+</section>
+
+<!-- FITUR MENULIS -->
+<section class="write-section" id="tulis">
+
+<div class="write-box">
+
+<h2>Tulis Perasaanmu</h2>
+
+<textarea placeholder="Tuliskan kata-kata yang tiba-tiba muncul di kepalamu..."></textarea>
+
+<button>Simpan Kenangan</button>
+
+</div>
+
+</section>
+
+<!-- MUSIK -->
+<audio autoplay loop controls style="position:fixed;bottom:20px;right:20px;z-index:999;">
+
+<source src="musik.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Buku Digital Puisi
+</footer>
+
+<script>
+
+/* HUJAN */
+const rain = document.querySelector('.rain');
+
+for(let i = 0; i < 120; i++){
+
+    const drop = document.createElement('div');
+
+    drop.classList.add('drop');
+
+    drop.style.left = Math.random() * 100 + 'vw';
+
+    drop.style.animationDuration =
+    Math.random() * 0.5 + 0.5 + 's';
+
+    drop.style.opacity = Math.random();
+
+    rain.appendChild(drop);
+}
+
+</script>
+
+</body>
+</html>
